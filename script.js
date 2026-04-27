@@ -51,3 +51,35 @@ const countObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll(".count").forEach((count) => {
   countObserver.observe(count);
 });
+
+
+
+
+
+
+
+// 가짜 실시간 업데이트 기능
+function simulateLiveUpdate() {
+  const metrics = document.querySelectorAll(".metric .count");
+  
+  metrics.forEach(metric => {
+    // 현재 숫자 가져오기
+    let currentVal = parseInt(metric.textContent);
+    
+    // -2에서 +2 사이의 랜덤값 생성
+    const change = Math.floor(Math.random() * 5) - 2; 
+    let newVal = currentVal + change;
+    
+    // 너무 낮아지거나 높아지지 않게 범위 제한 (예: 10 ~ 99)
+    if (newVal < 10) newVal = 10;
+    if (newVal > 99) newVal = 99;
+    
+    // 부드럽게 숫자 교체
+    metric.textContent = newVal;
+  });
+}
+
+// 처음 카운트업 애니메이션이 끝난 후(약 2초 뒤)부터 실시간 시뮬레이션 시작
+setTimeout(() => {
+  setInterval(simulateLiveUpdate, 2500); // 2.5초마다 실행
+}, 2000);
