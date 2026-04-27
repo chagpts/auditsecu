@@ -359,3 +359,38 @@ footer {
   .dashboard { inset: 20px 0 auto 0; }
   .cards, .stats { grid-template-columns: 1fr; }
 }
+
+
+
+
+
+
+
+
+
+
+/* 기존 .scan 스타일 아래에 추가 */
+.scan {
+  position: relative;
+  overflow: hidden;
+}
+
+.chart-svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80%; /* 스캔 영역 안에서 그래프 높이 */
+}
+
+.chart-line {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawLine 4s ease-in-out infinite;
+}
+
+@keyframes drawLine {
+  0% { stroke-dashoffset: 1000; }
+  50% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -1000; }
+}
