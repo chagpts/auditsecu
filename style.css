@@ -217,9 +217,10 @@ section {
 
 .section-desc {
   color: var(--muted);
-  max-width: 650px;
-  line-height: 1.7;
+  max-width: 850px;     /* 숫자를 충분히 늘려주세요 */
+  line-height: 1.6;
   margin-bottom: 36px;
+  word-break: keep-all; /* 단어가 잘리지 않고 통째로 넘어가게 함 (한글 필수!) */
 }
 
 .cards {
