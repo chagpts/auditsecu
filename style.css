@@ -217,10 +217,12 @@ section {
 
 .section-desc {
   color: var(--muted);
-  max-width: 850px;     /* 숫자를 충분히 늘려주세요 */
+  max-width: 850px;
+  margin-inline: auto; /* 좌우 여백을 자동으로 잡아 중앙으로 보냄 */
+  text-align: center;  /* 텍스트 자체도 가운데 정렬 */
   line-height: 1.6;
-  margin-bottom: 36px;
-  word-break: keep-all; /* 단어가 잘리지 않고 통째로 넘어가게 함 (한글 필수!) */
+  margin-bottom: 40px;
+  word-break: keep-all;
 }
 
 .cards {
