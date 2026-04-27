@@ -279,11 +279,7 @@ section {
   animation: marquee 18s linear infinite;
 }
 
-.stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-}
+
 
 .stat {
   padding: 30px;
@@ -300,7 +296,19 @@ section {
 .stat p {
   color: var(--muted);
   margin: 8px 0 0;
+  font-size: 14px;      /* 1px 정도 줄여서 여유 확보 */
+  line-height: 1.4;     /* 줄 간격을 살짝 넓혀 가독성 향상 */
+  word-break: keep-all; /* 단어 단위로 줄바꿈 (한글이 예쁘게 나옴) */
+  white-space: normal;  /* 필요시 줄바꿈 허용 */
 }
+
+/* 만약 박스 자체가 너무 작다면 통계 섹션의 간격을 조정 */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;            /* 간격을 조금 줄여서 박스 공간 확보 */
+}
+
 
 .cta {
   text-align: center;
